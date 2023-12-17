@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+*::before,*::after{
+    margin: 0;
+    padding: 0;
+}
+:root{
+    --pink: hsl(339,100%,73%);
+    --violet: hsl(305,23%,54%);
+    --lightdark: hsl(223,16%,39%);
+    --white: hsl(0,0%,100%);
+    --darkwhite: hsl(300,2%,78%);
+    --pinkshow: hsl(346,29%,83%);
+    --lightboxshow: hsl(300,4%,9%);
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(var(--lightboxshow)10%,var(--lightdark)100%);
+}
+.wrapper{
+    position: absolute;
+    width: 400px;
+    background-color: var(--white);
+    border-radius: 14px;
+    padding: 50px;
+    box-shadow: 0px 6px 15px var(--lightboxshow);
+}
+.wrapper i{
+    cursor: pointer;
+}
+.top-bar,.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 20px;
+}
+.top-bar i{
+    font-size: 30px;
+    color: var(--lightdark);
+}
+.top-bar h3{
+    font-size: 18px;
+    color: var(--lightdark);
+    user-select: none;
+}
+.img{
+    width: 100%;
+    height: 250px;
+    border-radius: 14px;
+    box-shadow: 0px 6px 15px var(--lightboxshow);
+    margin-block-end: 20px;
+    overflow: hidden;
+}
+.img img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.song-details{
+    text-align: center;
+    color: var(--lightdark);
+    margin-block-end: 20px;
+}
+.song-details .name{
+    font-size: 20px;
+    user-select: none;
+}
+.song-details .Artist{
+    font-size: 18px;
+    opacity: 0.9;
+    user-select: none;
+}
+.progress-area{
+    width: 100%;
+    height: 5px;
+    background-color: var(--white);
+    border-radius: 14px;
+    cursor: pointer;
+    margin-block-end: 10px;
+}
+.progress-area .progress-bar{
+    position: relative;
+    height: inherit;
+    width: 0%;
+    border-radius: inherit;
+    background:linear-gradient(90deg, var(--pink) 0%, var(--violet)100%);
+}
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    height: 12px;
+    width: 12px;
+    background-color: black;
+    border-radius: inherit;
+    top: 50%;
+    transform: translateY(-50%);
+    right:-5px;
+    background: inherit;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.progress-area:hover .progress-bar::before{
+    opacity: 1;
+}
+.countdown{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 20px;
+}
+.current,.duration{
+    font-size: 13px;
+    color: var(--lightdark);
+    user-select: none;
+}
+
+.controls i{
+    font-size: 28px;
+    user-select: none;
+    border-radius: 5px;
+    background: linear-gradient(var(--pink) 0%,var(--violet) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.controls .bxs-arrow-to-left{
+    font-size: 40px;
+}
+.play-pause{
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(var(--white) 0%,var(--darkwhite) 100%);
+    box-shadow: 0px 0px 5px var(--pink);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.play-pause .material-symbols-outlined{
+    font-size: 40px;
+    font-weight: 600;
+}
+.more-list{
+    width: 100%;
+    position: absolute;
+    left:0;
+    bottom: -70%;
+    padding: 0px 45px;
+    border-radius: 15px;
+    pointer-events: none;
+    background: var(--white);
+    box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+}
+.show{
+    bottom: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+.more-list .header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-block-end: 15px;
+}
+.more-list li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header .row{
+    display: flex;
+    align-items: center;
+    font-size: 19px;
+    color: var(--lightdark);
+}
+.more-list ul{
+    max-height: 256px;
+    overflow: auto;
+    cursor: pointer;
+}
+.more-list ul li{
+    list-style: none;
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 10px;
+    margin-bottom: 5px;
+    color: var(--lightdark);
+}
+.row h4{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 500;
+    user-select: none;
+}
+span .bx-window-close{
+    font-size: 22px;
+    margin: 10px 0px;
+    color: var(--lightdark);
+}
+.more-list ul li:last-child{
+    border-bottom: 0px;
+}
+ul li .row p{
+    opacity: 0.7;
+}
+.audio-time{
+    font-size: 16px;
+}
